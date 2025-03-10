@@ -1,4 +1,3 @@
-const express = require("express")
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
@@ -14,7 +13,9 @@ app.use(cors());
 
 
 const PORT = process.env.PORT ?? 3000
+const userRoutes = require('./src/routes/userRoutes')
 
+app.use(express.json());
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -23,6 +24,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
   app.use("/User", UserRoute)
 
+app.use("/", userRoutes);
+  
   app.listen(PORT, ()=>{
     console.log("Funcionando en http://localhost:"+ PORT );
     
