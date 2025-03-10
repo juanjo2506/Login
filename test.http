@@ -1,0 +1,26 @@
+
+#### Crear una pelicula con post
+POST http://localhost:3000/User/create
+Content-Type: application/json
+
+{
+    "name": "test23",
+    "lastName": "test23",
+    "username": "*test63",
+    "email": "test63@gmail.com",
+    "password": "s.A123456*",
+    "country": "colombia",
+    "cc": "1094975308"
+    
+    }
+
+#### Crear una pelicula con post
+POST http://localhost:3000/User/login
+Content-Type: application/json
+
+{
+    "username": "*test63",
+    "password": "s.A123456*"
+    
+    }
+
